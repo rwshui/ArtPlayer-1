@@ -22,11 +22,13 @@ jobs:
     - name: npm install, build
       run: |
         npm install
-        npm run build all
+        npx lerna bootstrap --hoist
+        npm run lint
+        npm run build:all
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: artifact
-        path: /home/runner/work/ArtPlayer-1/dist
+        path: /home/runner/work/ArtPlayer-1/ArtPlayer-1/dist
 
