@@ -14,7 +14,9 @@ export default function eventInit(art) {
     const maxReconnectTime = 5;
 
     proxy($video, 'click', () => {
+    if (!isMobile) {
         art.toggle();
+    }
     });
 
     proxy($video, 'dblclick', () => {
